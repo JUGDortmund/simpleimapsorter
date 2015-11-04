@@ -1,5 +1,7 @@
 package imap;
 
+import gui.Gui.Account;
+
 public class Imap {
 
 	/**
@@ -9,5 +11,7 @@ public class Imap {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	public void readFolders(Account account) {}
+	
 }
