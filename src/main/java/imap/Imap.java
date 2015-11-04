@@ -1,4 +1,4 @@
-package com.github.simpleimapsorter.imap;
+package imap;
 
 public class Imap {
 

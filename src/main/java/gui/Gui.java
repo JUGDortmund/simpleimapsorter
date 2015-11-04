@@ -1,4 +1,4 @@
-package com.github.simpleimapsorter.gui;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -15,14 +15,18 @@ import javax.swing.JMenuItem;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
+
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Gui extends JFrame {
+
+	private static final long serialVersionUID = 7441052136085841110L;
 
 	private JPanel contentPane;
 	private JTable tableAccounts;
@@ -81,7 +85,7 @@ public class Gui extends JFrame {
 		scrollPane.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (e.getButton()==MouseEvent.BUTTON3) {
+				if (e.getButton() == MouseEvent.BUTTON3) {
 					popupMenuTableAccounts.show(e.getComponent(), e.getX(),
 							e.getY());
 				}

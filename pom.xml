@@ -8,7 +8,7 @@
     <packaging>jar</packaging>
     <version>0.1-SNAPSHOT</version>
     <name>simpleimapsorter</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/JUGDortmund/simpleimapsorter</url>
     <dependencies>
         <dependency>
             <groupId>javax.mail</groupId>
@@ -16,4 +16,23 @@
             <version>1.4.7</version>
         </dependency>
     </dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>    
+<properties>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <maven.compiler.source>1.8</maven.compiler.source>   
+</properties>    
 </project>

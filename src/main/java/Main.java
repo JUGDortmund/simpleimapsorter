@@ -1,8 +1,8 @@
-package com.github.simpleimapsorter;
+
+
+import gui.Gui;
 
 import java.awt.EventQueue;
-
-import com.github.simpleimapsorter.gui.Gui;
 
 public class Main {
 

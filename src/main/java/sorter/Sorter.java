@@ -1,4 +1,4 @@
-package com.github.simpleimapsorter.sorter;
+package sorter;
 
 import java.awt.EventQueue;
 
