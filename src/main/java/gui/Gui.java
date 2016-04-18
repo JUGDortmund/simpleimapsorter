@@ -3,6 +3,8 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.mail.Session;
+import javax.mail.Store;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -27,7 +29,9 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
+
 import javax.swing.JButton;
 import javax.swing.ListSelectionModel;
 
@@ -61,7 +65,9 @@ public class Gui extends JFrame {
 		private String user;
 		private String password;
 		private boolean marked;
-		private List<Folder> folders;
+		private List<MyFolder> folders;
+		private Session session;
+		private Store store;
 
 		public Account(String host, String user, String password) {
 			this.host = host;
@@ -101,12 +107,28 @@ public class Gui extends JFrame {
 			this.marked = marked;
 		}
 
-		public List<Folder> getFolders() {
+		public List<MyFolder> getFolders() {
 			return folders;
 		}
 
-		public void setFolders(List<Folder> folders) {
+		public void setFolders(List<MyFolder> folders) {
 			this.folders = folders;
+		}
+
+		public Session getSession() {
+			return session;
+		}
+
+		public void setSession(Session session) {
+			this.session = session;
+		}
+
+		public Store getStore() {
+			return store;
+		}
+
+		public void setStore(Store store) {
+			this.store = store;
 		}
 
 		@Override
@@ -115,9 +137,14 @@ public class Gui extends JFrame {
 		}
 	}
 
-	public static class Folder {
+	public static class MyFolder {
 		private String name;
 		private String keywords;
+
+		public MyFolder(String name) {
+			this.name = name;
+			this.keywords = "";
+		}
 
 		public String getName() {
 			return name;
@@ -246,7 +273,7 @@ public class Gui extends JFrame {
 						.showMessageDialog(
 								Gui.this,
 								"Add email account with popup menu.\n"
-										+ "Open Email Account with popup menu.\n"
+										+ "Open Email Account with double click.\n"
 										+ "Enter keywords for folders and then sort inbox with button.");
 			}
 		});
